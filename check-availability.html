@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Check Availability</title>
+   <link rel="stylesheet" href="style.css">
+   <script>
+      function checkAvailability(event) {
+         event.preventDefault(); // Prevent form submission
+         const available = true; // Simulating availability check
+         if (available) {
+            alert("Room is available. Proceeding to payment.");
+            window.location.href = "booking.html"; // Redirect to the payment page
+         } else {
+            alert("No rooms available for the selected dates. Please try other dates.");
+         }
+      }
+   </script>
+</head>
+
+
+<header class="header">
+    <div class="flex">
+       <nav class="navbar">
+          <a href="index.html">Home</a>
+       </nav>
+    </div>
+</header>
+
+
+<body>
+<section class="availability" id="availability">
+   <form onsubmit="checkAvailability(event)">
+      <div class="flex">
+         <div class="box">
+            <p>Check-in <span>*</span></p>
+            <input type="date" name="check_in" class="input" required>
+         </div>
+         <div class="box">
+            <p>Check-out <span>*</span></p>
+            <input type="date" name="check_out" class="input" required>
+         </div>
+         <div class="box">
+            <p>Adults <span>*</span></p>
+            <select name="adults" class="input" required>
+               <option value="1">1 Adult</option>
+               <option value="2">2 Adults</option>
+               <option value="3">3 Adults</option>
+               <option value="4">4 Adults</option>
+               <option value="5">5 Adults</option>
+               <option value="6">6 Adults</option>
+            </select>
+         </div>
+         <div class="box">
+            <p>Children <span>*</span></p>
+            <select name="children" class="input" required>
+               <option value="0">0 Child</option>
+               <option value="1">1 Child</option>
+               <option value="2">2 Children</option>
+               <option value="3">3 Children</option>
+               <option value="4">4 Children</option>
+               <option value="5">5 Children</option>
+               <option value="6">6 Children</option>
+            </select>
+         </div>
+         <div class="box">
+            <p>Rooms <span>*</span></p>
+            <select name="rooms" class="input" required>
+               <option value="1">1 Room</option>
+               <option value="2">2 Rooms</option>
+               <option value="3">3 Rooms</option>
+               <option value="4">4 Rooms</option>
+               <option value="5">5 Rooms</option>
+               <option value="6">6 Rooms</option>
+            </select>
+         </div>
+      </div>
+      <input type="submit" value="Check Availability" name="check" class="btn">
+   </form>
+</section>
+</body>
+</html>
